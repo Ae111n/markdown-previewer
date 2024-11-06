@@ -2,28 +2,41 @@
   <div id="main">
 
     <h1>fcc markdown previewer</h1>
-    <textarea  id="editor" v-model="input"></textarea>
-    <test>{{ input }}</test>
-    <button>parse</button>
-    <div id="preview"></div>
+    <textarea placeholder="your markdown goes here" id="editor" v-model="input"></textarea>
+<button id="clearbtn" @click="clearta">Clear textArea</button>
+    <div id="preview" v-html="parsemd">
+
+    </div>
 
   </div>
 </template>
 
 <script>
-import marked from 'marked'
+import {marked} from 'marked'
 export default {
 data() {
     return {
-        input :"#title"
+        input :" # type markdown here ",
+
+
     }
 },
-computed : {
- parse() {
-    marked(this.input)
- }
-
+methods :{
+clearta () {
+  this.input = ''
 }
+},
+computed :{
+parsemd() {
+  return marked(this.input)
+}
+
+
+},
+
+
+
+
 
 }
 </script>
@@ -54,4 +67,9 @@ display: flex;
     min-height:90px;
     border: 1px solid black;
 }
+#clearbtn {
+  height: 44px;
+  min-width:70%;
+  font-size: large;
+  }
 </style>
