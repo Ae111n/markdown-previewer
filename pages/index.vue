@@ -9,8 +9,5 @@ export default {
 </script>
 
 <style>
-mdp {
-width: 100%;
-height: 100%;
-}
+
 </style>

@@ -5,7 +5,7 @@
       <textarea class='blackboard' placeholder="your markdown goes here" id="editor" v-model="input"></textarea>
     </fieldset>
 
-    <button id="clear-button" class="button-54" @click="clearTextArea">Clear textArea</button>
+    <button id="clear-button" class="button-clear" @click="clearTextArea">Clear textArea</button>
 
     <fieldset>
       <legend>preview</legend>
@@ -101,7 +101,7 @@ legend {
 
 
 
-.button-54 {
+.button-clear {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   letter-spacing: 2px;
