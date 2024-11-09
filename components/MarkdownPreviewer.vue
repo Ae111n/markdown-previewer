@@ -5,12 +5,12 @@
       <textarea class='blackboard' placeholder="your markdown goes here" id="editor" v-model="input"></textarea>
     </fieldset>
 
-    <button id="clearbtn" class="button-54" @click="clearta">Clear textArea</button>
+    <button id="clear-button" class="button-54" @click="clearTextArea">Clear textArea</button>
 
     <fieldset>
       <legend>preview</legend>
 
-      <div id="preview" v-html="parsemd"></div>
+      <div id="preview" v-html="parseMarkdown"></div>
     </fieldset>
   </div>
 </template>
@@ -24,12 +24,12 @@ export default {
     }
   },
   methods: {
-    clearta() {
+    clearTextArea() {
       this.input = ''
     }
   },
   computed: {
-    parsemd() {
+    parseMarkdown() {
       return marked(this.input)
     }
   },

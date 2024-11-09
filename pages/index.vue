@@ -1,5 +1,5 @@
 <template>
-<mdp></mdp>
+<MarkdownPreviewer></MarkdownPreviewer>
 </template>
 
 <script>
