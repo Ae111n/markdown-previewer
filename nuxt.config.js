@@ -1,5 +1,7 @@
 export default {
-  target: 'static',
+  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+  ssr: false,
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'mdp',
@@ -38,6 +40,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile : ['marked']
+    transpile: ['marked']
   }
 }
