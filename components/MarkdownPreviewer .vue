@@ -3,13 +3,11 @@
     <fieldset>
       <legend>markdown</legend>
       <textarea class='blackboard' placeholder="your markdown goes here" id="editor" v-model="input"></textarea>
+      <button id="clear-button" class="button-clear" @click="clearTextArea">Clear textArea</button>
     </fieldset>
-
-    <button id="clear-button" class="button-clear" @click="clearTextArea">Clear textArea</button>
 
     <fieldset>
       <legend>preview</legend>
-
       <div id="preview" v-html="parseMarkdown"></div>
     </fieldset>
   </div>
@@ -41,17 +39,15 @@ export default {
   width: 100%;
   height: 100%;
   display: flex;
-
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 4px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
+  font-family: "Open Sans", sans-serif;
 }
 
 fieldset {
-  border: 0px;
+  border: none;
   min-width: 550px;
   width: 75%;
   min-height: 280px;
@@ -60,10 +56,18 @@ fieldset {
 
 legend {
   color: rgb(58, 25, 96);
-  ;
   font-size: 22px;
   font-style: italic;
-  margin-bottom: -5px;
+  font-weight: bold;
+  margin-bottom: -30px;
+  border-radius: 5px;
+  padding-bottom: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 #editor {
@@ -80,6 +84,9 @@ legend {
   color: white;
 }
 
+.blackboard:focus {
+  outline: none;
+}
 
 #preview {
   min-width: 550px;
@@ -96,14 +103,9 @@ legend {
   margin-top: 0px;
 }
 
-
-
-
-
-
 .button-clear {
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
@@ -116,22 +118,50 @@ legend {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  float: right;
+  margin-right: auto;
 }
 
-.button-54:active {
+.button-clear:active {
   box-shadow: 0px 0px 0px 0px;
   top: 5px;
   left: 5px;
+  margin-top: 0;
 }
 
-@media (min-width: 768px) {
-  .button-54 {
+@media (max-width: 668px) {
+  .button-clear {
     padding: 0.25em 0.75em;
+    float: right;
+    margin-right: 100px;
+    font-size: 16px;
   }
-}
 
-#main {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  #editor {
+    min-width: 160px;
+    width: 80%;
+    min-height: 180px;
+    border-left: 9px solid rgb(95, 47, 151);
+    border-top: 9px solid rgb(78, 36, 126);
+    border-right: 9px solid rgb(58, 25, 96);
+    border-bottom: 9px solid rgb(46, 16, 81);
+    box-shadow: 8px 7px 15px rgb(101, 97, 86);
+    background-color: rgb(29, 29, 29);
+    color: white;
+  }
+
+  #preview {
+    min-width: 160px;
+    width: 80%;
+    min-height: 180px;
+    border-left: 9px solid rgb(95, 47, 151);
+    border-top: 9px solid rgb(78, 36, 126);
+    border-right: 9px solid rgb(58, 25, 96);
+    border-bottom: 9px solid rgb(46, 16, 81);
+    box-shadow: 8px 7px 15px rgb(101, 97, 86);
+    background-color: rgb(0, 0, 0);
+    color: white;
+  }
 }
 
 #__layout {
@@ -144,6 +174,5 @@ html {
   height: 100%;
   width: 100%;
   background-color: rgb(180, 186, 199);
-
 }
 </style>
